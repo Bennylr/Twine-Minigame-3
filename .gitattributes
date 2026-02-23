@@ -1,2 +1,86 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+:: StoryTitle
+Twine Minigame 3
+
+
+:: StoryData
+{
+  "ifid": "8AC1BB3A-A85C-4FF2-97AF-12B8F88F704B",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Maze",
+  "zoom": 1
+}
+
+
+:: East {"position":"600,300","size":"100,100"}
+!East Path
+[img[https://i.postimg.cc/C5BQLF57/download.webp]]
+Walking east you spot a very __shinny pedestal__ in the middle of the room. 
+
+//You decied to sit and think, on what you want to do next.//
+
+*Examine the [[pedestal->Pedestal Room][$playerChoice to "examined"]]
+*Ignore the [[pedestal->Pedestal Room]]
+
+
+:: Final Door {"position":"500,575","size":"100,100"}
+!THE FINAL DOOR
+After this long and tiring journey you reach the door. Walking up to it you see it only has one key hole. You nervously try the key you obtained and insert it into the hole. 
+
+//CLICK//
+
+IT WORKS!!
+
+You take your first steps of freedom and see the starry night. It's beatiful but you don't stare too long and begin walking where you think is home. 
+
+//THE END.//
+
+[img[https://i.postimg.cc/tTVc9qsp/OIP.webp]]
+
+
+
+
+:: Maze {"position":"500,100","size":"100,100"}
+!The Maze
+[img[https://i.postimg.cc/cCnFGX54/download.jpg]]
+You wake up in a musty ahh maze. Your only goal in this maze is to find the key and leave this place forever. 
+
+//As you get up from the ground you see two passages. Which way are you taking??//
+
+*Go [[North->North]]?
+*Go [[East->East]]?
+
+
+:: North {"position":"400,300","size":"100,100"}
+!The North Path
+[img[https://i.postimg.cc/DZC9wjgv/download.webp]]
+You walk north until your legs give out. The air is much more __colder__. Looking around you see it's nothing but just a dead end.
+
+//You sigh in dissapointment and start walking back where you came from.//
+
+*Go [[Back->Maze]]
+
+
+:: Pedestal Room {"position":"500,450","size":"100,100"}
+! Pedestal Room
+<<if $playerChoice is "examined">>
+[img[https://i.postimg.cc/hG4g4dnc/OIP.webp]]
+You feel compelled to reach out to the mysterious pedestal. Suddenly, a little __rusty key__ pops out of nowhere!! You quickly take it from the pedestal and run out of the room into the hallway. 
+*Walk to the final [[door->Final Door]]!!
+<!-- If the player examined the pedestal -->
+<<else>>
+You enter the room expecting a grand reveal! But the room is empty. It makes you feel a bit lost...
+//(Maybe look around a bit more closely)//
+*Go [[backwards->East]]
+<!-- If the player ignored the pedestal first. -->
+<</if>>
+
+
+
+
+:: Vault {"position":"700,100","size":"100,100"}
+!Code Only
+<!-- These passage is only for variables for the game. No player is supposed to see these lines. -->
+
+<<set $playerChoice to "none">>
+
