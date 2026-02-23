@@ -1,3 +1,3 @@
 # Twine Minigame 3
 ## Devlog
-Write your Devlog here.
+1.) In my game, I only used one variable which was "$playerChoice". That variable helped by acting as the story's "memory". By doing that it also helped the if and else macros trigger the specific branch based on the player's past actions. I didn't make new passages and used if macros instead of just making new passages because it would prevent a buld up of too many passages. By doing it this way I can also maintain the flow of my game. Like for example, the "pedestal room" could've had many passages but by adding if and else macros I made using more passages unnecessary and made it tidy. This also helps the player's point of view as well. It gives a seamless look without giving the player a new screen to look at every time. 
